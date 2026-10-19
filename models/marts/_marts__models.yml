@@ -44,3 +44,12 @@ models:
         description: "Cumulative net revenue attributed to this customer."
         tests:
           - not_null
+
+    - name: dim_dates
+    description: "Standard enterprise calendar dimension table for time-series analysis."
+    columns:
+      - name: date_day
+        description: "Primary key date."
+        tests:
+          - unique
+          - not_null
