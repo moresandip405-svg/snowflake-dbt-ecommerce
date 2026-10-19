@@ -218,3 +218,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+# Python virtual environment
+venv/
+__pycache__/
+
+# dbt build artifacts & logs
+target/
+dbt_packages/
+logs/
+
+# Sensitive user configs
+profiles.yml
+.env
