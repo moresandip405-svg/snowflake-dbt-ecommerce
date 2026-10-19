@@ -18,10 +18,10 @@ aggregated as (
         order_key,
         count(*) as total_items_count,
         sum(quantity) as total_quantity_ordered,
-        round(sum(gross_price), 2) as gross_sales_amount,
-        round(sum(net_price), 2) as net_sales_amount,
-        round(sum(discount_amount), 2) as total_discount_amount,
-        round(sum(total_amount_with_tax), 2) as total_billed_amount
+        {{ cents_to_dollars('sum(gross_price)') }} as gross_sales_amount,
+        {{ cents_to_dollars('sum(net_price)') }} as net_sales_amount,
+        {{ cents_to_dollars('sum(discount_amount)') }} as total_discount_amount,
+        {{ cents_to_dollars('sum(total_amount_with_tax)') }} as total_billed_amount
     from item_level_calculations
     group by order_key
 )
