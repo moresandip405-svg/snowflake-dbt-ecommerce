@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: tpch_sf1
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+    description: "Standard TPC-H benchmark data at scale factor 1 (~1GB)."
+    tables:
+      - name: customer
+        identifier: CUSTOMER
+        description: "Raw customer master table."
+      - name: orders
+        identifier: ORDERS
+        description: "Raw transactions table holding high-level order headers."
+      - name: lineitem
+        identifier: LINEITEM
+        description: "Individual item purchase entries per order."
